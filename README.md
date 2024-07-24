@@ -1,29 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/c-ns3yZY)
-# Lab environment
-The lab should be done on Mac/Linux. It also supports WSL (windows subsystem for Linux). If you use any other platforms, you can follow the steps in the [README](https://github.com/cs300-epfl/lab-setup/blob/master/vm_setup.md) to setup the VM.
-All the tools required for this course are already setup inside the VM.
-
-You can follow the steps here to setup VSCode and run the code inside the VM: [VSCode setup](https://github.com/cs300-epfl/lab-setup/blob/master/vscode_setup.md).
-
-We use GitHub Classroom for lab submission and automatic grading and evaluation. You can check the basic information here: [Github Classroom](https://github.com/cs300-epfl/lab-setup?tab=readme-ov-file)
-
-## Google Tests
-This lab uses googletests to test your code. For ubuntu users, you can use the following command to install googletest if you have not installed it yet.
-```
-sudo apt install googletest libgtest-dev
-```
-For Mac users, you can clone the repo, compile it and install it.
-```
-git clone https://github.com/google/googletest
-cd googletest
-mkdir build
-cd build
-cmake ..
-make
-make install
-```
-
-# Lab 2
+# Lab 
 In this lab, you will build a buffer pool for the DBMS. The buffer pool allows a DBMS to support databases that are larger than the available amount of main memory. The buffer pool includes three components: a storage manager, a replacer, and a buffer manager. The storage manager is responsible for managing the disk, which is the primary storage location of the database. The buffer manager is responsible for moving the physical pages back and forth between the main memory and the disk. The replacer primarily decides which page in the main memory to move back to the disk when the main memory is full.
 The buffer pool's operations are transparent to other parts of the DBMS. The DBMS asks the buffer pool to access blocks using its unique identifier `block_id`
 In this lab, we will implement a single threaded buffer pool, which means we don’t need to consider race conditions and consistency across concurrent executions (thread-safety). The buffer pool we are going to implement is a much simplified version of one in a real DBMS.
