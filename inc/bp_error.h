@@ -1,0 +1,9 @@
+#pragma once
+
+#define ESTORAGEMANAGER 1
+#define ESTORAGEWRITE 2
+#define ESTORAGEREAD 3
+
+#define EBUFFERMANAGER 4
+
+#define EREPLACER 5
